@@ -6,13 +6,22 @@ int main()
     printf("A program to read two matrices, calculate their product and display the result\n");
     printf("***************************************************************************\n\n");
 
-    int a[10][10], b[10][10], result[10][10], r1, c1, r2, c2, i, j, k;
+    int r1, c1, r2, c2, i, j, k;
 
     printf("Enter rows and column for first matrix: ");
     scanf("%d %d", &r1, &c1);
 
+    //initialize matrix a
+    int a[r1][c1];
+
     printf("Enter rows and column for second matrix: ");
     scanf("%d %d",&r2, &c2);
+
+    //initialize matrix b
+    int b[r2][c2];
+
+    //initialize matrix result
+    int result[r1][c2];
 
     // Column of first matrix should be equal to column of second matrix and
     while (c1 != r2)
@@ -55,7 +64,7 @@ int main()
         for(j=0; j<c2; ++j)
             for(k=0; k<c1; ++k)
             {
-                result[i][j]+=a[i][k]*b[k][j];
+                result[i][j]+= a[i][k] * b[k][j];
             }
 
     // Displaying the result
